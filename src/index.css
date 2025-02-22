@@ -11,3 +11,33 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+
+.navbar{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin:0;
+  gap: 15px;
+}
+.navbar li {
+  margin-right: 20px; /* Espacio entre los elementos del navbar */
+}
+
+.navbar li:last-child {
+  margin-right: 0; /* Elimina el margen derecho del último elemento */
+}
+
+img {
+  height: 50px; /* Ajusta el tamaño del logo según sea necesario */
+  margin-right: 20px; /* Espacio entre el logo y el navbar */
+}
