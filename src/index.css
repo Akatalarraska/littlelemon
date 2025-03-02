@@ -30,7 +30,7 @@ header{
   gap: 15px;
 }
 .navbar li {
-  margin-right: 20px; /* Espacio entre los elementos del navbar */
+  margin-right: 20px; /* Espacio entre los elem ventos del navbar */
 }
 
 .navbar li:last-child {
@@ -40,4 +40,56 @@ header{
 img {
   height: 50px; /* Ajusta el tamaño del logo según sea necesario */
   margin-right: 20px; /* Espacio entre el logo y el navbar */
+}
+
+
+
+
+
+.footer-container {
+  background-color: #1f2937;
+  color: white;
+  padding: 3rem;
+  margin-top: 3rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  text-align: left;
+}
+
+@media (min-width: 768px) {
+  .footer-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.footer-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.footer-list {
+  margin-top: 0.5rem;
+  list-style: none;
+  padding: 0;
+}
+
+.footer-list li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-link {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+.footer-text {
+  margin-top: 0.5rem;
 }
