@@ -1,7 +1,10 @@
+import Jumbotron from "./Jumbotron";
+
 function Main(){
     return(
         <main className="container mx-auto p-4">
         {/* Hero Section */}
+        <Jumbotron />
         <section className="text-center py-12">
           <h1 className="text-4xl font-bold">Little Lemon</h1>
           <p className="text-gray-600 max-w-2xl mx-auto">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>

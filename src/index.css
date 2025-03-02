@@ -93,3 +93,110 @@ img {
 .footer-text {
   margin-top: 0.5rem;
 }
+
+
+
+
+/* Jumbotron.css */
+.jumbotron-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f4f4f4;
+  padding: 4rem;
+}
+
+.jumbotron-content {
+  max-width: 50%;
+}
+
+.jumbotron-title {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.jumbotron-text {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+}
+
+.jumbotron-button {
+  background-color: black;
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  cursor: pointer;
+}
+
+.jumbotron-image {
+  width: 50%;
+  height: 300px;
+  background: gray;
+}
+
+/* Main.css */
+.main-container {
+  padding: 4rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.specials-section, .testimonials-section {
+  margin-bottom: 4rem;
+}
+
+.specials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.special-card {
+  border: 1px solid #ddd;
+  padding: 1.5rem;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.special-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.special-description {
+  margin: 1rem 0;
+}
+
+.special-button {
+  background-color: #ffcc00;
+  color: black;
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.testimonial-card {
+  border: 1px solid #ddd;
+  padding: 1.5rem;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.testimonial-text {
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.testimonial-author {
+  font-weight: bold;
+}
