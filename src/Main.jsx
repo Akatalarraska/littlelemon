@@ -23,12 +23,20 @@ function Main(){
               </div>
             ))}
           </div>
+
+
+          
         </section>
         
         {/* Testimonials Section */}
         <section className="py-12">
           <h2 className="text-3xl font-semibold text-center">Testimonials</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+
+
+
+
+
             {[1, 2, 3].map((_, index) => (
               <div key={index} className="border p-4 rounded-lg text-center">
                 <p className="text-gray-600">"Amazing experience!"</p>
