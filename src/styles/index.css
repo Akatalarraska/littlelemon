@@ -1,3 +1,13 @@
+/* src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Opcional: Tus estilos personalizados */
+.btn-primary {
+  @apply bg-lemon-green text-white px-4 py-2 rounded hover:bg-lemon-yellow;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
