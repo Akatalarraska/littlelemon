@@ -3,7 +3,7 @@ import littlelemon_logo from "../styles/littlelemon_logo.png"
 
 function Nav(){
     return(
-        <nav >
+        <nav className="navbar" >
             <img src={littlelemon_logo} alt="Little Lemon Logo" ></img>
             <ul className="navbar">
                 <li><Link to="/">Home</Link></li>
