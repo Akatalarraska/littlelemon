@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
+import littlelemon_logo from "../styles/littlelemon_logo.png"
 
 function Nav(){
     return(
         <nav >
+            <img src={littlelemon_logo} alt="Little Lemon Logo" ></img>
             <ul className="navbar">
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/about">About</Link></li>

@@ -10,5 +10,4 @@ const Jumbotron = () => {
       </section>
     );
   };
-  
   export default Jumbotron;
