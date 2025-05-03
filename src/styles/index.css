@@ -166,43 +166,100 @@ img {
 }
 
 
-
-
-/* Jumbotron.css */
-.jumbotron-container {
+/* Jumbotron Styles */
+.jumbotron {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #f4f4f4;
-  padding: 4rem;
+  background-color: #495E57;
+  padding: 3rem 10%;
+  color: white;
+  max-height: 300px;
 }
 
 .jumbotron-content {
-  max-width: 50%;
+  flex: 1;
+  max-width: 500px;
+  padding-right: 2rem;
 }
 
 .jumbotron-title {
   font-size: 3rem;
-  font-weight: bold;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #F4CE14;
 }
 
-.jumbotron-text {
-  font-size: 1.2rem;
-  margin: 1rem 0;
+.jumbotron-subtitle {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.jumbotron-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
 }
 
 .jumbotron-button {
-  background-color: black;
-  color: white;
-  padding: 1rem 2rem;
+  background-color: #F4CE14;
+  color: #333;
   border: none;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
   cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.jumbotron-button:hover {
+  background-color: #e6b800;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.jumbotron-image-container {
+  width: 45%;
+  max-height: 80%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
 .jumbotron-image {
-  width: 50%;
-  height: 300px;
-  background: gray;
+  width: 100%;
+  height: 280px;
+  display: block;
+  object-fit: initial
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .jumbotron {
+      flex-direction: column;
+      padding: 2rem 5%;
+  }
+  
+  .jumbotron-content {
+      padding-right: 0;
+      margin-bottom: 2rem;
+      text-align: center;
+      max-width: 100%;
+  }
+  
+  .jumbotron-image-container {
+      width: 100%;
+  }
+  
+  .jumbotron-title {
+      font-size: 2.2rem;
+  }
+  
+  .jumbotron-subtitle {
+      font-size: 1.6rem;
+  }
 }
 
 /* Main.css */

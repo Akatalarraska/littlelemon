@@ -1,13 +1,26 @@
+import React from 'react';
+import restaurantImage from '../styles/restfood.jpg';
+
 const Jumbotron = () => {
     return (
-      <section className="jumbotron-container">
+      <section className="jumbotron">
         <div className="jumbotron-content">
           <h1 className="jumbotron-title">Little Lemon</h1>
-          <p className="jumbotron-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          <button className="jumbotron-button">Reserve a Table</button>
+          <h2 className="jumbotron-subtitle">Chicago</h2>
+          <p className="jumbotron-description">
+            We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.
+          </p>
+          <button className="jumbotron-button">Reserve Table</button>
         </div>
-        <div className="jumbotron-image"></div>
+        <div className="jumbotron-image-container">
+          <img 
+            src={restaurantImage} 
+            alt="Little Lemon restaurant interior" 
+            className="jumbotron-image"
+          />
+        </div>
       </section>
     );
-  };
-  export default Jumbotron;
+};
+
+export default Jumbotron;
