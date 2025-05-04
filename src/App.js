@@ -1,15 +1,30 @@
 import React from 'react';
 import './App.css';
 import Nav from "./components/Nav.jsx"
-import Main from "./components/Main.jsx"
 import Footer from "./components/Footer.jsx"
+import BookingPage from './components/BookingPage.jsx';
+import OrderOnline from './components/OrderOnline.jsx';
+import ConfirmedBooking from './components/ConfirmedBooking.jsx';
+import { Route, Routes } from 'react-router-dom';
+import About from './components/About.jsx';
+import Menu from './components/Menu.jsx';
 
 function App() {
   return (
     <div>
     <React.Fragment>
       <Nav />
-      <Main />
+      <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/menu" element={<Menu />} />
+            <Route path="/reservations" element={<BookingPage />} />
+            <Route path="/confirmed" element={<ConfirmedBooking />} />
+            <Route path="/order-online" element={<OrderOnline />} />
+            <Route path="/login" element={<Login />} />
+          </Routes>
+        </main>
       <Footer />
     </React.Fragment>
     </div>

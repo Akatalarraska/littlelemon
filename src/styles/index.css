@@ -1,9 +1,3 @@
-
-/* Opcional: Tus estilos personalizados */
-.btn-primary {
-  @apply bg-lemon-green text-white px-4 py-2 rounded hover:bg-lemon-yellow;
-}
-
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -368,4 +362,57 @@ img {
 
 .testimonial-author {
   font-weight: bold;
+}
+
+
+/* Booking Form Styles */
+.booking-page {
+  padding: 2rem 10%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.booking-form {
+  display: grid;
+  max-width: 400px;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.booking-form label {
+  font-weight: 600;
+  color: #495E57;
+}
+
+.booking-form input, 
+.booking-form select {
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.booking-form button {
+  background-color: #F4CE14;
+  color: #333;
+  border: none;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.booking-form button:hover {
+  background-color: #495E57;
+  color: white;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+  .booking-page {
+      padding: 2rem 5%;
+  }
 }

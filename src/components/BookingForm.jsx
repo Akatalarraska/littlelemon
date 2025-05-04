@@ -5,14 +5,16 @@ import { useState } from "react";
 
 const BookingForm = (props) => {
 
-   const [occasion, setOccasion] = useState("");
-   const [guests, setGuests] = useState("");
-   const [date, setDate] = useState("");
-   const [times, setTimes] = useState("")
+  const [date, setDate] = useState("");
+  const [hour, setHour] = useState("17:00")
+  const [guests, setGuests] = useState(1);
+  const [occasion, setOccasion] = useState('Birthday');
 
-   const handleSumbit = (e) => {
+  const availableTimes = ['17:00', '18:00', '19:00', '20:00', '21:00', '22:00'];
+
+   const handleSubmit = (e) => {
    e.preventDefault();
-   props.submitForm(e);
+   console.log('Form submitted:', { date, hour, guests, occasion });
    };
 
    const handleChange = (e) => {
@@ -20,42 +22,58 @@ const BookingForm = (props) => {
     props.dispatch(e);
    }
 
-  return (
-    <header>
-      <section>
-        <form onSubmit={handleSumbit}>
-          <fieldset>
-            <div>
-              <label htmlFor="book-date">Choose Date</label>
-              <input id="book-date" value={date} onChange={(e) => handleChange(e.target.value)} type="date" required/>
-            </div>
-            <div>
-              <label htmlFor="book-time">Choose Time</label>
-              <select id="book-time" value={times} onChange={(e) => setTimes(e.target.value)} required>
-                <option value="">Select a Time</option>
-               {props.availableTimes.availableTimes.map(availableTimes => {return <option key={availableTimes}>{availableTimes}</option>})}
-              </select>
-            </div>
-            <div>
-              <label htmlFor="book-guests">Number of Guests</label>
-              <input id="book-guests" min="1" value={guests} onChange={(e) => {setGuests(e.target.value)}} type={"number"} placeholder={0} max={10} required></input>
-            </div>
-            <div>
-              <label htmlFor="book-occasion">Occasion</label>
-              <select id="book-occasion" key={occasion} value={occasion} onChange={(e) => setOccasion(e.target.value)} required>
-                <option value="">Select an Option</option>
-                <option>Birthday</option>
-                <option>Anniversary</option>
-              </select>
-            </div>
-            <div>
-              <input aria-label="On Click" type={"submit"} value={"Make Your Reservation"}></input>
-            </div>
-          </fieldset>
-        </form>
-      </section>
-    </header>
+   // Puedes añadir validación adicional
+const isFormValid = date && hour && guests >= 1 && guests <= 10;
+
+// Y deshabilitar el botón si no es válido
+
+    return (
+      <form onSubmit={handleSubmit} className="booking-form">
+          <label htmlFor="res-date">Choose date</label>
+          <input 
+              type="date" 
+              id="res-date" 
+              value={date}
+              onChange={(e) => setDate(e.target.value)}
+              required
+          />
+          
+          <label htmlFor="res-time">Choose time</label>
+          <select 
+              id="res-time" 
+              value={hour}
+              onChange={(e) => setHour(e.target.value)}
+              required
+          >
+              {availableTimes.map((timeOption) => (
+                  <option key={timeOption} value={timeOption}>{timeOption}</option>
+              ))}
+          </select>
+          
+          <label htmlFor="guests">Number of guests</label>
+          <input 
+              type="number" 
+              id="guests" 
+              value={guests}
+              onChange={(e) => setGuests(e.target.value)}
+              min="1" 
+              max="10" 
+              required
+          />
+          
+          <label htmlFor="occasion">Occasion</label>
+          <select 
+              id="occasion" 
+              value={occasion}
+              onChange={(e) => setOccasion(e.target.value)}
+          >
+              <option value="Birthday">Birthday</option>
+              <option value="Anniversary">Anniversary</option>
+          </select>
+          
+          <button type="submit" disabled={!isFormValid}> Make Your Reservation </button>
+
+      </form>
   );
 };
-
 export default BookingForm;
