@@ -1,24 +1,11 @@
 import { useReducer, useState } from 'react';
 import Jumbotron from './Jumbotron';
 import BookingForm from './BookingForm';
-
-const initializeTimes = () => {
-  return ['17:00', '18:00', '19:00', '20:00', '21:00', '22:00'];
-};
-const updateTimes = (state, action) => {
-  switch (action.type) {
-    case 'DATE_CHANGE':
-       console.log('Fecha seleccionada:', action.payload);
-      return initializeTimes();
-    default:
-      return state;
-  }
-};
-
+import { initializeTimes, updateTimes } from '../utils/timeUtils';
 
 function Home(){
   const [availableTimes, dispatch] = useReducer(updateTimes, null, initializeTimes);
-  const [formData, setFormData] = useState({
+    const [formData, setFormData] = useState({
     date: '',
     hour: '',
     guests: 1,

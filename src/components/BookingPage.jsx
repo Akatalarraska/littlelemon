@@ -1,17 +1,6 @@
 import React, { useReducer, useState } from 'react';
 import BookingForm from './BookingForm';
-
-const initializeTimes = () => ['17:00', '18:00', '19:00', '20:00', '21:00', '22:00'];
-
-const updateTimes = (state, action) => {
-  switch (action.type) {
-    case 'DATE_CHANGE':
-      return initializeTimes(); // Puedes personalizar esto según la fecha
-    default:
-      return state;
-  }
-};
-
+import { initializeTimes, updateTimes } from '../utils/timeUtils';
 
 const BookingPage = () => {
     const [availableTimes, dispatch] = useReducer(updateTimes, null, initializeTimes);
