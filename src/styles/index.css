@@ -432,20 +432,34 @@ main {
 
 /* Estilos para la página de confirmación */
 .confirmed-booking {
-  text-align: center;
-  padding: 4rem;
-  background-color: #f8f8f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  padding: 2rem;
+}
+
+.confirmation-card {
+  background: white;
+  padding: 3rem;
   border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
   max-width: 600px;
-  margin: 2rem auto;
 }
 
-.confirmed-booking h2 {
-  color: #495E57;
-  margin-bottom: 1rem;
+.back-home-btn {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.8rem 1.5rem;
+  background-color: #495E57;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
-.confirmed-booking p {
-  font-size: 1.1rem;
+.back-home-btn:hover {
+  background-color: #F4CE14;
   color: #333;
 }

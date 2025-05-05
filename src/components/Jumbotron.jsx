@@ -1,5 +1,6 @@
 import React from 'react';
 import restaurantImage from '../styles/restfood.jpg';
+import { Link } from 'react-router-dom';
 
 const Jumbotron = () => {
     return (
@@ -10,7 +11,7 @@ const Jumbotron = () => {
           <p className="jumbotron-description">
             We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.
           </p>
-          <button className="jumbotron-button">Reserve Table</button>
+          <button className="jumbotron-button"><Link to="/reservations" className="jumbotron-button">Reserve Table</Link></button>
         </div>
         <div className="jumbotron-image-container">
           <img 

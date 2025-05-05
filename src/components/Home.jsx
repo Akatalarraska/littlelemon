@@ -1,10 +1,46 @@
+import { useReducer, useState } from 'react';
 import Jumbotron from './Jumbotron';
+import BookingForm from './BookingForm';
+
+const initializeTimes = () => {
+  return ['17:00', '18:00', '19:00', '20:00', '21:00', '22:00'];
+};
+const updateTimes = (state, action) => {
+  switch (action.type) {
+    case 'DATE_CHANGE':
+       console.log('Fecha seleccionada:', action.payload);
+      return initializeTimes();
+    default:
+      return state;
+  }
+};
+
 
 function Home(){
+  const [availableTimes, dispatch] = useReducer(updateTimes, null, initializeTimes);
+  const [formData, setFormData] = useState({
+    date: '',
+    hour: '',
+    guests: 1,
+    occasion: 'Birthday'
+  });
+
+  const handleDateChange = (date) => {
+    dispatch({ type: 'DATE_CHANGE', payload: date });
+    setFormData(prev => ({ ...prev, date }));
+  };
     return(
         <main className="container mx-auto p-4">
         <Jumbotron />
-        <section className="text-center py-12">
+        <BookingForm
+        availableTimes={availableTimes}
+        formData={formData}
+        onDateChange={handleDateChange}
+        onFieldChange={setFormData}
+      />
+
+
+        {/* <section className="text-center py-12">
           <h1 className="text-4xl font-bold">Little Lemon</h1>
           <p className="text-gray-600 max-w-2xl mx-auto">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
           <button className="bg-black text-white px-6 py-2 mt-4 rounded">Reserve a Table</button>
@@ -33,7 +69,7 @@ function Home(){
               </div>
             ))}
           </div>
-        </section>
+        </section> */}
       </main>
     )
 }
