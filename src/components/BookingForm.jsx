@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useReducer } from "react";
 import { useNavigate } from 'react-router-dom';
+import { initializeTimes, updateTimes } from "../utils/timeUtils";
 
-const BookingForm = ({ availableTimes , formData={}, onDateChange=()=>{}, onFieldChange=()=>{} }) => {
+const BookingForm = ({  formData={}, onDateChange=()=>{}, onFieldChange=()=>{} }) => {
+    const [availableTimes, dispatch] = useReducer(updateTimes, null, initializeTimes());
     const navigate = useNavigate();
 
     const handleSubmit = (e) => {
