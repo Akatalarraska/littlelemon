@@ -1,6 +1,6 @@
 import Jumbotron from './Jumbotron';
 
-function Main(){
+function Home(){
     return(
         <main className="container mx-auto p-4">
         <Jumbotron />
@@ -38,4 +38,4 @@ function Main(){
     )
 }
 
-export default Main;
+export default Home;

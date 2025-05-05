@@ -416,3 +416,36 @@ img {
       padding: 2rem 5%;
   }
 }
+
+
+/* Estilos generales */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  padding: 2rem 5%;
+}
+
+/* Estilos para la página de confirmación */
+.confirmed-booking {
+  text-align: center;
+  padding: 4rem;
+  background-color: #f8f8f8;
+  border-radius: 12px;
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+.confirmed-booking h2 {
+  color: #495E57;
+  margin-bottom: 1rem;
+}
+
+.confirmed-booking p {
+  font-size: 1.1rem;
+  color: #333;
+}

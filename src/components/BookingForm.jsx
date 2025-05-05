@@ -25,8 +25,6 @@ const BookingForm = (props) => {
    // Puedes añadir validación adicional
 const isFormValid = date && hour && guests >= 1 && guests <= 10;
 
-// Y deshabilitar el botón si no es válido
-
     return (
       <form onSubmit={handleSubmit} className="booking-form">
           <label htmlFor="res-date">Choose date</label>

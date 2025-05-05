@@ -6,6 +6,7 @@ import BookingPage from './components/BookingPage.jsx';
 import OrderOnline from './components/OrderOnline.jsx';
 import ConfirmedBooking from './components/ConfirmedBooking.jsx';
 import { Route, Routes } from 'react-router-dom';
+import Home from './components/Home.jsx'; 
 import About from './components/About.jsx';
 import Menu from './components/Menu.jsx';
 
@@ -22,7 +23,7 @@ function App() {
             <Route path="/reservations" element={<BookingPage />} />
             <Route path="/confirmed" element={<ConfirmedBooking />} />
             <Route path="/order-online" element={<OrderOnline />} />
-            <Route path="/login" element={<Login />} />
+            {/* <Route path="/login" element={<Login />} /> */}
           </Routes>
         </main>
       <Footer />
