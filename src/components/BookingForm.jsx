@@ -2,20 +2,30 @@ import React, { useReducer } from "react";
 import { useNavigate } from 'react-router-dom';
 import { initializeTimes, updateTimes } from "../utils/timeUtils";
 
-const BookingForm = ({  formData={}, onDateChange=()=>{}, onFieldChange=()=>{} }) => {
+const BookingForm = ({ formData = {}, onDateChange = () => { }, onFieldChange = () => { }, onSubmit }) => {
     const [availableTimes, dispatch] = useReducer(updateTimes, null, initializeTimes());
     const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('Form submitted:', formData);
-        navigate('/confirmed');
+
+        const success = window.submitAPI(formData);
+
+        if (success) {
+            if (typeof onSubmit === 'function') {
+                onSubmit(formData);
+            }
+            navigate('/confirmed');
+        } else {
+            alert("Error al enviar la reserva.");
+        }
     };
+
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         onFieldChange(prev => ({ ...prev, [name]: value }));
-        
+
         if (name === 'date') {
             onDateChange(value);
         }
@@ -32,11 +42,11 @@ const BookingForm = ({  formData={}, onDateChange=()=>{}, onFieldChange=()=>{} }
                 onChange={handleInputChange}
                 required
             />
-            
+
             <label htmlFor="res-time">Choose time</label>
             <select
                 id="res-time"
-                name="hour"  
+                name="hour"
                 value={formData?.hour}
                 onChange={handleInputChange}
                 required
@@ -46,7 +56,7 @@ const BookingForm = ({  formData={}, onDateChange=()=>{}, onFieldChange=()=>{} }
                     <option key={timeOption} value={timeOption}>{timeOption}</option>
                 ))}
             </select>
-            
+
             <label htmlFor="guests">Number of guests</label>
             <input
                 type="number"
@@ -58,7 +68,7 @@ const BookingForm = ({  formData={}, onDateChange=()=>{}, onFieldChange=()=>{} }
                 max="10"
                 required
             />
-            
+
             <label htmlFor="occasion">Occasion</label>
             <select
                 id="occasion"

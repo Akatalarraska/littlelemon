@@ -1,5 +1,5 @@
 const seededRandom = function (seed) {
-    var m = 2**35 - 31;
+    var m = 2 ** 35 - 31;
     var a = 185852;
     var s = seed % m;
     return function () {
@@ -7,21 +7,22 @@ const seededRandom = function (seed) {
     };
 };
 
-window.fetchAPI = function(date) {
+window.fetchAPI = function (date) {
     let result = [];
-    let random = seededRandom(date.getDate());
+    let random = seededRandom(date.getTime());
 
-    for(let i = 17; i <= 23; i++) {
-        if(random() < 0.5) {
+    for (let i = 17; i <= 23; i++) {
+        if (random() < 0.5) {
             result.push(i + ':00');
         }
-        if(random() < 0.5) {
+        if (random() < 0.5) {
             result.push(i + ':30');
         }
     }
+    console.log("Available times for", date.toDateString(), ":", result);
     return result;
 };
 
-window.submitAPI = function(formData) {
+window.submitAPI = function (formData) {
     return true;
 };
