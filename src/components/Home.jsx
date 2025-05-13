@@ -26,13 +26,16 @@ function Home(){
   return (
     <main className="container mx-auto p-4">
       <Jumbotron />
-      <BookingForm
-        availableTimes={availableTimes}
-        formData={formData}
-        onDateChange={handleDateChange}
-        onFieldChange={setFormData}
-        onSubmit={handleSubmit}
-      />
+      <div className='divHomeForm'>
+        <BookingForm
+          availableTimes={availableTimes}
+          formData={formData}
+          onDateChange={handleDateChange}
+          onFieldChange={setFormData}
+          onSubmit={handleSubmit}
+        />
+
+      </div>
 
       <BookingTable bookings={bookings} />
     </main>

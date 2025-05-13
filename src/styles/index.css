@@ -366,6 +366,13 @@ img {
 
 
 /* Booking Form Styles */
+.divHomeForm{
+  width: 100%;
+  margin: auto;
+}
+.divForm{
+  margin: auto;
+}
 .booking-page {
   padding: 2rem 10%;
   max-width: 800px;
