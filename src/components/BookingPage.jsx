@@ -16,7 +16,11 @@ const BookingPage = () => {
 
     const handleDateChange = (date) => {
         dispatch({ type: 'DATE_CHANGE', payload: date });
-        setFormData(prev => ({ ...prev, date }));s
+        setFormData(prev => ({ ...prev, date }));
+      };
+
+       const handleInputChange = (name, value) => {
+        setFormData(prev => ({ ...prev, [name]: value }));
       };
 
       const submitForm = (formData) => {
@@ -34,7 +38,7 @@ const BookingPage = () => {
             availableTimes={availableTimes}
             formData={formData}
             onDateChange={handleDateChange}
-            onFieldChange={setFormData} 
+            onFieldChange={handleInputChange}            
             onSubmit={submitForm}/>
         </div>
     );
