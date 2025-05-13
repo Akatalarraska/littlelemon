@@ -4,8 +4,6 @@ import { initializeTimes, updateTimes } from '../utils/timeUtils';
 import { useNavigate } from 'react-router-dom';
 
 const BookingPage = () => {
-  console.log("Initializing useReducer with:", () => initializeTimes());
-    //const [availableTimes, dispatch] = useReducer(updateTimes, null, initializeTimes);
     const [availableTimes, dispatch] = useReducer(updateTimes, null, () => initializeTimes())
     const [formData, setFormData] = useState({
       date: '',
@@ -18,7 +16,7 @@ const BookingPage = () => {
 
     const handleDateChange = (date) => {
         dispatch({ type: 'DATE_CHANGE', payload: date });
-        setFormData(prev => ({ ...prev, date }));
+        setFormData(prev => ({ ...prev, date }));s
       };
 
       const submitForm = (formData) => {

@@ -8,10 +8,11 @@ const BookingForm = ({ availableTimes, formData, onDateChange, onFieldChange, on
         onSubmit(formData)
     };
 
+
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         onFieldChange(prev => ({ ...prev, [name]: value }));
-        
+
         if (name === 'date') {
             onDateChange(value);
         }
@@ -28,11 +29,11 @@ const BookingForm = ({ availableTimes, formData, onDateChange, onFieldChange, on
                 onChange={handleInputChange}
                 required
             />
-            
+
             <label htmlFor="res-time">Choose time</label>
             <select
                 id="res-time"
-                name="hour"  
+                name="hour"
                 value={formData?.hour}
                 onChange={handleInputChange}
                 required
@@ -42,7 +43,7 @@ const BookingForm = ({ availableTimes, formData, onDateChange, onFieldChange, on
                     <option key={timeOption} value={timeOption}>{timeOption}</option>
                 ))}
             </select>
-            
+
             <label htmlFor="guests">Number of guests</label>
             <input
                 type="number"
@@ -54,7 +55,7 @@ const BookingForm = ({ availableTimes, formData, onDateChange, onFieldChange, on
                 max="10"
                 required
             />
-            
+
             <label htmlFor="occasion">Occasion</label>
             <select
                 id="occasion"

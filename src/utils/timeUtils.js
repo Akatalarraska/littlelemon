@@ -3,7 +3,7 @@ export const initializeTimes = () => {
   return window.fetchAPI(today);
   // }
 };
-  
+
 export const updateTimes = (state, action) => {
     switch (action.type) {
       case 'DATE_CHANGE':
