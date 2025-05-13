@@ -4,7 +4,7 @@ import BookingForm from './BookingForm';
 import { initializeTimes, updateTimes } from '../utils/timeUtils';
 
 function Home(){
-  const [availableTimes, dispatch] = useReducer(updateTimes, null, initializeTimes());
+  const [availableTimes, dispatch] = useReducer(updateTimes, null, ()=>initializeTimes());
   const [formData, setFormData] = useState({
     date: '',
     hour: '',
