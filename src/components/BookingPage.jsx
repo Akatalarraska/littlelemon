@@ -19,7 +19,8 @@ const BookingPage = () => {
         setFormData(prev => ({ ...prev, date }));
       };
 
-       const handleInputChange = (name, value) => {
+      const handleInputChange = (e) => {
+        const { name, value } = e.target;  
         setFormData(prev => ({ ...prev, [name]: value }));
       };
 
