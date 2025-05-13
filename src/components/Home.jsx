@@ -1,7 +1,7 @@
 import { useReducer, useState } from 'react';
 import Jumbotron from './Jumbotron';
 import BookingForm from './BookingForm';
-import BookingTable from './BookingTable'; 
+import BookingTable from './BookingTable';
 import { initializeTimes, updateTimes } from '../utils/timeUtils';
 
 function Home(){
@@ -26,13 +26,13 @@ function Home(){
   return (
     <main className="container mx-auto p-4">
       <Jumbotron />
-      <BookingForm
+      {/* <BookingForm
         availableTimes={availableTimes}
         formData={formData}
         onDateChange={handleDateChange}
         onFieldChange={setFormData}
         onSubmit={handleSubmit}
-      />
+      /> */}
 
       <BookingTable bookings={bookings} />
     </main>

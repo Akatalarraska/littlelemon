@@ -8,7 +8,7 @@ import { Route, Routes } from 'react-router-dom';
 import Home from './components/Home.jsx';
 import About from './components/About.jsx';
 import Menu from './components/Menu.jsx';
-import BookingForm from './components/BookingForm';
+import BookingPage from './components/BookingPage.jsx';
 
 function App () {
   return (
@@ -20,7 +20,7 @@ function App () {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/menu" element={<Menu />} />
-            <Route path="/reservations" element={<BookingForm />} />
+            <Route path="/reservations" element={<BookingPage />} />
             <Route path="/confirmed" element={<ConfirmedBooking />} />
             <Route path="/order-online" element={<OrderOnline />} />
             {/* <Route path="/login" element={<Login />} /> */}
